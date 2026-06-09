@@ -14,6 +14,6 @@ RUN wget -O /tmp/repro/cache/wheels/9e/32/41/213c095f1dfa427bb3df41ef8612b9c7e3d
 RUN mkdir -p /home/ubuntu/work/Red-Install-Tests/deps/repos/Red-DiscordBot
 RUN wget -O- https://github.com/Jackenmen/Red-DiscordBot/tarball/refs/heads/fix_argument_handling_in_prompt_builder | tar --strip-components=1 -C /home/ubuntu/work/Red-Install-Tests/deps/repos/Red-DiscordBot -xzvf -
 
-RUN pip install -vvv --no-deps 'Red-DiscordBot @ file:///home/ubuntu/work/Red-Install-Tests/deps/repos/Red-DiscordBot'
+RUN /tmp/repro/.venv/bin/pip install -vvv --no-deps 'Red-DiscordBot @ file:///home/ubuntu/work/Red-Install-Tests/deps/repos/Red-DiscordBot'
 
 ENTRYPOINT ["bash"]
